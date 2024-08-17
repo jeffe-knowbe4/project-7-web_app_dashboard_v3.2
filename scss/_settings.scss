@@ -49,3 +49,11 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .settings {
+    .settings-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

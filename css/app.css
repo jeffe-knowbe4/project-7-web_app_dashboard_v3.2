@@ -345,6 +345,11 @@ input.toggle:checked::after {
     justify-self: start;
   }
 }
+@media (min-width: 1024px) {
+  .settings .settings-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .body-container {
   display: grid;
   grid-template-areas: "header" "nav" "main";
