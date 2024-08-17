@@ -1,0 +1,38 @@
+input.toggle {
+  appearance: none;
+  position: relative;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: #ccc;
+  transition: background 0.3s;
+  outline: none;
+  cursor: pointer;
+
+  &::after {
+    content: "off";
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.3s;
+    line-height: 1.5;
+    text-indent: 2.5rem;
+  }
+
+  &:checked {
+    background-color: $color-light;
+  }
+
+  &:checked::after {
+    left: 80%;
+    content: "on";
+    text-indent: -3rem;
+  }
+}

@@ -1,0 +1,59 @@
+.member-card {
+  padding-top: 1.25rem;
+  text-align: center;
+
+  .name,
+  .email {
+    margin-bottom: 0.25rem;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 0.5rem;
+    border-radius: 50%;
+    height: 5rem;
+  }
+  .email {
+    color: $color-light;
+    display: block;
+  }
+
+  & + .member-card {
+    border-top: 1px solid #ccc;
+    margin-top: 1rem;
+  }
+
+  strong {
+    font-weight: 400;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .more {
+    display: none;
+    font-size: 1.5rem;
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .member-card {
+    display: grid;
+    grid-template-columns: 7rem 1fr 7rem;
+    align-items: center;
+    text-align: left;
+
+    .date {
+      text-align: right;
+    }
+
+    .activity {
+      .date {
+        text-align: left;
+      }
+    }
+
+    .more {
+      display: block;
+    }
+  }
+}

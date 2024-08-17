@@ -1,0 +1,30 @@
+.alert {
+  background-color: $color-light;
+  color: #fff;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  margin: 1.25rem;
+  position: relative;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+
+  .close {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+
+  &.success {
+    background-color: $color-active;
+  }
+}
+
+section {
+  .alert {
+    margin: 1.25rem 0;
+  }
+}

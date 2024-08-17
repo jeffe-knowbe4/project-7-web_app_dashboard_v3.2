@@ -1,0 +1,66 @@
+.notifications {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #fff;
+  justify-self: end;
+  position: relative;
+
+  .bell {
+    &:hover {
+      animation: 0.5s shake cubic-bezier(0.33, 0.07, 0.15, 0.9) both;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 0.4rem;
+      width: 0.4rem;
+      border-radius: 50%;
+      background-color: $color-active;
+      position: absolute;
+      top: -0.35rem;
+      right: -0.25rem;
+    }
+  }
+
+  .dropdown {
+    min-width: 15rem;
+    position: absolute;
+    right: -5rem;
+    top: 1.5rem;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+
+    &.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &::before {
+      content: "▲";
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      left: 60%;
+    }
+
+    ul {
+      background-color: #fff;
+      border-radius: $border-radius;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+      color: #333;
+      margin: 0;
+      padding: 0 1rem;
+      list-style: none;
+
+      li {
+        padding: 1rem;
+        & + li {
+          border-top: 1px solid #ccc;
+        }
+      }
+    }
+  }
+}

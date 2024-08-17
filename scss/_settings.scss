@@ -1,0 +1,51 @@
+.settings {
+  display: grid;
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .settings-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #333;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    gap: 1.25rem;
+    white-space: nowrap;
+
+    input {
+      justify-self: end;
+    }
+  }
+
+  select {
+    background-color: $bg-light;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    color: #333;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .buttons {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+}
+
+@media (min-width: 768px) {
+  .settings {
+    .settings-row {
+      grid-template-columns: 1fr 2fr;
+
+      input {
+        justify-self: start;
+      }
+    }
+  }
+}

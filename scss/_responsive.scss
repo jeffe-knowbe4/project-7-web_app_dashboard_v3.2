@@ -1,0 +1,82 @@
+.body-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+}
+
+nav {
+  grid-area: nav;
+  background-color: $color-dark;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  padding: 0.75rem 3rem 0.5rem 3rem;
+
+  .nav-item {
+    text-align: center;
+    img {
+      height: 2.5rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .body-container {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+  nav {
+    display: block;
+    padding: 6.5rem 1.2rem 1rem;
+    position: fixed;
+    height: 100%;
+    z-index: 5;
+
+    .nav-item {
+      margin-bottom: 1.5rem;
+    }
+  }
+  main {
+    margin-left: 5rem;
+  }
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "section-visits section-visits"
+      "section-traffic section-mobile"
+      "section-social section-social"
+      "section-members section-members"
+      "section-recent section-recent"
+      "section-message section-message"
+      "section-settings section-settings";
+  }
+  #section-visits .types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #section-mobile {
+    border-left: 2px solid #ccc;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sections {
+    grid-template-areas:
+      "section-visits section-visits"
+      "section-traffic section-mobile"
+      "section-social section-social"
+      "section-members section-recent"
+      "section-message section-settings";
+  }
+  #section-recent,
+  #section-settings {
+    border-left: 2px solid #ccc;
+  }
+}

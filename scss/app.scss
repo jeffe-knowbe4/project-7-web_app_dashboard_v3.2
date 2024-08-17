@@ -1,0 +1,150 @@
+@import url(./normalize.css);
+@import "variables";
+@import "animations";
+@import "notifications";
+@import "social";
+@import "pills";
+@import "members";
+@import "form";
+@import "alerts";
+@import "toggle";
+@import "settings";
+@import "responsive";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300..700;1,300..700&family=Roboto:wght@300;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100%;
+  letter-spacing: 0.5px;
+}
+
+header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr;
+  grid-area: header;
+  background-color: $color-light;
+  color: #fff;
+  padding: 1rem;
+  z-index: 10;
+
+  .logo {
+    justify-self: start;
+    font-size: 1.75rem;
+  }
+
+  .right-items {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  .avatar {
+    border-left: 1px solid rgba(#fff, 0.25);
+    margin-left: 1rem;
+    padding: 0 1rem;
+    img {
+      border-radius: 50%;
+      height: 3rem;
+    }
+  }
+
+  .username {
+    white-space: nowrap;
+  }
+}
+
+main {
+  grid-area: main;
+  position: relative;
+
+  .title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: $bg-light;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      background-color: #fff;
+      margin: 0;
+      padding: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .tab-bg {
+      border: solid #ccc;
+      border-width: 0 0 2px 2px;
+    }
+  }
+
+  section {
+    padding: 1.25rem 1.25rem 1.5rem;
+
+    h2 {
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    & + section {
+      border-top: 2px solid #ccc;
+    }
+  }
+}
+
+#section-visits {
+  grid-area: section-visits;
+}
+#section-traffic {
+  grid-area: section-traffic;
+}
+#section-mobile {
+  grid-area: section-mobile;
+}
+#section-social {
+  grid-area: section-social;
+}
+#section-members {
+  grid-area: section-members;
+}
+#section-recent {
+  grid-area: section-recent;
+}
+#section-message {
+  grid-area: section-message;
+}
+#section-settings {
+  grid-area: section-settings;
+}
+
+.chart {
+  margin: 0 0.5rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: $border-radius;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: $color-light;
+}
+
+.btn-secondary {
+  background-color: #999;
+}
