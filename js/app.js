@@ -23,10 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   initCharts();
-  initForm();
+  initMessageForm();
   loadSettings();
 });
 
+// keep some refs around to destroy/reload on window resize
 const charts = {
   traffic: null,
   dailyTraffic: null,
@@ -205,14 +206,12 @@ function handleResize() {
   initCharts();
 }
 
-function initForm() {
+function initMessageForm() {
   $("#message-form").addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (hasMessageErrors()) {
       return;
-    } else {
-      clearMessageErrors();
     }
 
     $("#message-alert").style.display = "block";
@@ -222,6 +221,7 @@ function initForm() {
 
 function hasMessageErrors() {
   clearMessageErrors();
+
   let hasError = false;
   if (!$("#message-form-user").value) {
     const error = $("#message-form-user + .error");
