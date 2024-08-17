@@ -13,6 +13,10 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   padding: 0.75rem 3rem 0.5rem 3rem;
+  position: fixed;
+  top: 5.2rem;
+  width: 100%;
+  z-index: 5;
 
   .nav-item {
     text-align: center;
@@ -20,6 +24,10 @@ nav {
       height: 2.5rem;
     }
   }
+}
+
+main {
+  margin-top: 9.25rem;
 }
 
 @media (min-width: 768px) {
@@ -34,7 +42,8 @@ nav {
     padding: 6.5rem 1.2rem 1rem;
     position: fixed;
     height: 100%;
-    z-index: 5;
+    top: 0;
+    width: auto;
 
     .nav-item {
       margin-bottom: 1.5rem;
@@ -42,6 +51,7 @@ nav {
   }
   main {
     margin-left: 5rem;
+    margin-top: 5.25rem;
   }
   .sections {
     display: grid;
